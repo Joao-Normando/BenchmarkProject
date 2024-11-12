@@ -7,7 +7,7 @@ public class BenchmarkTesteJava {
     private static final int N = 10;
 
     @Benchmark
-    public long factorialIterative() {
+    public long fatorialDeDez() {
         long result = 1;
         for (int i = 2; i <= N; i++) {
             result *= i;
