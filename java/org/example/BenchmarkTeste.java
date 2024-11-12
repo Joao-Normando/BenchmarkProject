@@ -1,14 +1,17 @@
 package org.example;
+import org.openjdk.jmh.annotations.*;
 
-import org.openjdk.jmh.annotations.Benchmark;
+@State(Scope.Benchmark)
+public class BenchmarkTesteJava {
 
-import static org.apache.commons.math3.util.ArithmeticUtils.factorial;
+    private static final int N = 10;
 
-public class BenchmarkTeste
-{
     @Benchmark
-    public long factorialJava() {
-        BenchmarkTeste factorial = new BenchmarkTeste();
-        return factorial(10);
+    public long factorialIterative() {
+        long result = 1;
+        for (int i = 2; i <= N; i++) {
+            result *= i;
+        }
+        return result;
     }
 }
